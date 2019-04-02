@@ -194,7 +194,7 @@
 
  - `grid_utils.pl` - this is not a stand-alone executable but rather a library of functions. To access these functions within a Perl script, the following line should be included in the script:
 
-   `require grid_utils.pl;`
+   `require "$PROJECT/tools/bin/grid_utils.pl";`
 
  - `grid_paint_values.pl` - this script sets all pixels of the given input grid  that fall within a given box and satisfy a condition to a given value (i.e., "paints" them with a given value).
 
