@@ -2,9 +2,9 @@
   
  - `grid_agg` - aggregates a grid to a coarser resolution via spatial averaging.  
   
-   Usage: grid_agg <in_grid> <datatype> <res_ratio> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_agg <in_grid> <data_type> <res_ratio> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <res_ratio>  Ratio of output/input resolution (or ratio of output/input cellsize) - must be integer  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
      <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
@@ -22,9 +22,9 @@
   
  - `grid_apply_mask` - applies the given mask to the input grid; all pixels outside the "valid" regions of the mask will be set to nodata values.  
   
-   Usage: grid_apply_mask <in_grid> <datatype> <mask_file> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_apply_mask <in_grid> <data_type> <mask_file> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <mask_file>  Mask file  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
      <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
@@ -32,9 +32,9 @@
   
  - `gridclip` - clips an input grid to a smaller (or larger) box bounded by the given min/max x/y coordinates. Where the output box extends beyond the limits of the input grid, the grid cells are assigned nodata values.  
   
-   Usage: gridclip <in_grid> <datatype> <xmin> <xmax> <ymin> <ymax> <coord_prec> <data_prec> <out_grid>  
+   Usage: gridclip <in_grid> <data_type> <xmin> <xmax> <ymin> <ymax> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <xmin>       Minimum x coordinate (western boundary)  
      <xmax>       Maximum x coordinate (eastern boundary)  
      <ymin>       Minimum y coordinate (southern boundary)  
@@ -45,9 +45,9 @@
   
  - `grid_latlon2utm` - reprojects a grid from geographic projection to Universal Transverse Mercator (UTM) projection.  
   
-   Usage: grid_latlon2utm <in_grid> <datatype> <zone> <resolution> <minx> <maxx> <miny> <maxy> <radius> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_latlon2utm <in_grid> <data_type> <zone> <resolution> <minx> <maxx> <miny> <maxy> <radius> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <zone>       UTM longitudinal zone  
      <resolution> Output resolution (cellsize, in m)  
      <minx>       Western boundary of output grid (m)  
@@ -63,9 +63,9 @@
   
  - `grid_make_mask_thresh` - xxx  
   
-   Usage: grid_make_mask_thresh <in_grid> <datatype> <condition> <threshold> <coord_prec> <out_grid>  
+   Usage: grid_make_mask_thresh <in_grid> <data_type> <condition> <threshold> <coord_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Input data datatype ("int" or "float")  
+     <data_type>       Input data data_type ("int" or "float")  
      <condition>  lt, le, eq, ge, gt  
      <threshold>  Value to compare grid values to; if condition is satisfied, returns 1, else 0  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
@@ -73,14 +73,14 @@
   
  - `grid_math` - xxx  
   
-   Usage: grid_math <in_grid_1> <datatype1> <in_grid_2> <datatype2> <operation> <nodata_out> <datatype_out> <union> <coord_prec> <data_prec> <out_grid>  
-     <in_grid_1>  First input grid file name, or a numerical value (when datatype1 = const)  
-     <datatype1>      Data datatype of first file ("int" or "float" or "const")  
-     <in_grid_2>  Second input grid file name, or a numerical value (when datatype2 = const)  
-     <datatype2>      Data datatype of second file ("int" or "float" or "const")  
+   Usage: grid_math <in_grid_1> <data_type1> <in_grid_2> <data_type2> <operation> <nodata_out> <data_type_out> <union> <coord_prec> <data_prec> <out_grid>  
+     <in_grid_1>  First input grid file name, or a numerical value (when data_type1 = const)  
+     <data_type1>      Data data_type of first file ("int" or "float" or "const")  
+     <in_grid_2>  Second input grid file name, or a numerical value (when data_type2 = const)  
+     <data_type2>      Data data_type of second file ("int" or "float" or "const")  
      <operation>  Mathematical operation ("+","-","*","/","min","max","avg","gt","ge","eq","le","lt")  
      <nodata_out> Nodata value for the output file  
-     <datatype_out>   Data datatype for the output file ("int" or "float")  
+     <data_type_out>   Data data_type for the output file ("int" or "float")  
      <union>      What to do for cells that are nodata in one of the files; 0 = set to nodata_out; 1 = take value from other file  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
      <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
@@ -88,22 +88,22 @@
   
  - `grid_overlay` - xxx  
   
-   Usage: grid_overlay <in_grid_1> <datatype1> <in_grid_2> <datatype2> <nodata_out> <datatype_out> <coord_prec> <data_prec> <out_grid>  
-     <in_grid_1>  First input grid file name, or a numerical value (when datatype1 = const)  
-     <datatype1>      Data datatype of first file ("int" or "float" or "const")  
-     <in_grid_2>  Second input grid file name, or a numerical value (when datatype2 = const)  
-     <datatype2>      Data datatype of second file ("int" or "float" or "const")  
+   Usage: grid_overlay <in_grid_1> <data_type1> <in_grid_2> <data_type2> <nodata_out> <data_type_out> <coord_prec> <data_prec> <out_grid>  
+     <in_grid_1>  First input grid file name, or a numerical value (when data_type1 = const)  
+     <data_type1>      Data data_type of first file ("int" or "float" or "const")  
+     <in_grid_2>  Second input grid file name, or a numerical value (when data_type2 = const)  
+     <data_type2>      Data data_type of second file ("int" or "float" or "const")  
      <nodata_out> Nodata value for the output file  
-     <datatype_out>   Data datatype for the output file ("int" or "float")  
+     <data_type_out>   Data data_type for the output file ("int" or "float")  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
      <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
      <out_grid>   Output grid file name  
   
  - `grid_smooth` - xxx  
   
-   Usage: grid_smooth <in_grid> <datatype> <method> <length> <geog> <trunc> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_smooth <in_grid> <data_type> <method> <length> <geog> <trunc> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <method>     Smoothing method ("mean","gauss")  
      <length>     For "mean", length = width (in pixels) of smoothing window  
                   For "gauss", length = cut-off wavelength (in pixels);  
@@ -121,9 +121,9 @@
   
  - `grid_stats` - xxx  
   
-   Usage: grid_stats <in_grid> <datatype> <stat> <width> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_stats <in_grid> <data_type> <stat> <width> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <stat>       Statistic to compute ("mean", "var", "std", "min", "max", "sum")  
      <width>      Width of analysis window; this is the resolution at which statistics will be output; a value of 0 == window encompasses entire grid  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
@@ -132,9 +132,9 @@
   
  - `grid_subsample` - xxx  
   
-   Usage: grid_subsample <in_grid> <datatype> <cellsize_out> <method> <length> <datatype_out> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <method> <length> <data_type_out> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <cellsize_out> Output cell width, in input units  
      <method>     Sub-sampling method; "nn" = nearest neighbor; "mean" = moving average; "bilin" = bi-linear interpolation, "gauss" = gaussian smoothing.  
      <length>     Characteristic length (in output pixels) of averaging method:  
@@ -146,7 +146,7 @@
                       and the smoothing window width will be set to:  
                         2*((int)(3*sigma))+1  
                       so that the window contains 3*sigma on each side of the central pixel  
-     <datatype_out>   Output data datatype ("int" or "float")  
+     <data_type_out>   Output data data_type ("int" or "float")  
      <coord_prec> Precision of coordinates, i.e. number of decimal places  
      <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
      <out_grid>   Output grid file name  
@@ -175,9 +175,9 @@
   
  - `grid_utm2latlon` - xxx  
   
-   Usage: grid_utm2latlon <in_grid> <datatype> <zone> <resolution> <minlon> <maxlon> <minlat> <maxlat> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_utm2latlon <in_grid> <data_type> <zone> <resolution> <minlon> <maxlon> <minlat> <maxlat> <coord_prec> <data_prec> <out_grid>  
      <in_grid>    Input grid file name  
-     <datatype>       Data datatype ("int" or "float")  
+     <data_type>       Data data_type ("int" or "float")  
      <zone>       UTM longitudinal zone  
      <resolution> Output resolution (cellsize, in degrees)  
      <minlon>     Western boundary of output grid (degrees)  
