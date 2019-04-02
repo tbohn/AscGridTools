@@ -12,7 +12,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_agg_class` - aggregates a grid of land cover class pixels to a coarser resolution. The output is a set of several grid files, one per each class present in the input grid. Each output grid file contains a map of the fractional area covered by that class in each output grid cell.  
+ - `grid_agg_class` - assumed the input grid is a land cover classification, and computes the area fraction of the given classID in the coarser-resolution cells of the output grid.
   
    Usage: grid_agg_class <in_grid> <res_ratio> <classID> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
@@ -63,7 +63,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_make_mask_thresh` - xxx  
+ - `grid_make_mask_thresh` - creates a mask by finding the set of cells that are above or below the given threshold in the input file.  
   
    Usage: grid_make_mask_thresh <in_grid> <data_type> <condition> <threshold> <coord_prec> <out_grid>  
    - <in_grid>    Input grid file name  
@@ -73,7 +73,7 @@
    - <coord_prec> Precision of coordinates, i.e. number of decimal places  
    - <out_grid>   Output grid file name  
   
- - `grid_math` - xxx  
+ - `grid_math` - performs mathematical operations on one or two input grids.  
   
    Usage: grid_math <in_grid_1> <data_type1> <in_grid_2> <data_type2> <operation> <nodata_out> <data_type_out> <union> <coord_prec> <data_prec> <out_grid>  
    - <in_grid_1>  First input grid file name, or a numerical value (when data_type1 = const)  
@@ -88,7 +88,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_overlay` - xxx  
+ - `grid_overlay` - fills nodata values in one grid with values from another grid (as if the first grid were overlaid on top of the second).  
   
    Usage: grid_overlay <in_grid_1> <data_type1> <in_grid_2> <data_type2> <nodata_out> <data_type_out> <coord_prec> <data_prec> <out_grid>  
    - <in_grid_1>  First input grid file name, or a numerical value (when data_type1 = const)  
@@ -101,7 +101,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_smooth` - xxx  
+ - `grid_smooth` - creates an output grid by smoothing the input grid (filling nodata values with interpolated values).  
   
    Usage: grid_smooth <in_grid> <data_type> <method> <length> <geog> <trunc> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
@@ -121,7 +121,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_stats` - xxx  
+ - `grid_stats` - computes spatial statistics of the input grid.  
   
    Usage: grid_stats <in_grid> <data_type> <stat> <width> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
@@ -132,7 +132,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file prefix; ".mean.asc", ".std.asc", etc. will be appended to this prefix to build the various output filenames  
   
- - `grid_subsample` - xxx  
+ - `grid_subsample` - subsamples the input grid to a finer resolution.  
   
    Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <method> <length> <data_type_out> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
@@ -153,7 +153,7 @@
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file name  
   
- - `grid_topo_index` - xxx  
+ - `grid_topo_index` - computes the topographic wetness index of the input grid (assuming the input grid is a digital elevation model).  
   
    Usage: grid_topo_index <demfile> <units> <vertres> <afile> <bfile> <wifile> <fracfile>  
    - <demfile>  DEM with arcinfo header  
@@ -164,7 +164,7 @@
    - <wifile>   (output) arcinfo map of topographic wetness index values (= ln(a/b))  
    - <fracfile> (output) file listing the wetness index values and their fractional areas  
   
- - `grid_topo_index_dinf` - xxx  
+ - `grid_topo_index_dinf` - computes the topographic wetness index of the input grid (assuming the input grid is a digital elevation model) using the D-infinity algorithm.  
   
    Usage: grid_topo_index_dinf <demfile> <units> <vertres> <wifile> <afile> <bfile> <fracfile>  
    - <demfile>  DEM with arcinfo header  
@@ -175,7 +175,7 @@
    - <bfile>    (output) arcinfo map of tanbeta values  
    - <fracfile> (output) file listing the wetness index values and their fractional areas  
   
- - `grid_utm2latlon` - xxx  
+ - `grid_utm2latlon` - reprojects the input grid from universal transverse mercator (UTM) to geographic.  
   
    Usage: grid_utm2latlon <in_grid> <data_type> <zone> <resolution> <minlon> <maxlon> <minlat> <maxlat> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
