@@ -1,6 +1,8 @@
 # Instructions for Compiling C-language Grid Tools
 
-The C-language tools can be compiled via the script `wrap_compile.pl`. This script uses the `gcc` compiler, which must be installed on your system. `wrap_compile.pl` is a Perl script that requires Perl 5 or later. Before running, make sure the script is executable by running:
+The C-language tools can be compiled via the script `wrap_compile.pl`, found in `$PROJECT/tools/bin`, where `$PROJECT` is the path to the directory containing your clone of this GitHub repo.
+
+`wrap_compile.pl` uses the `gcc` compiler, which must be installed on your system. `wrap_compile.pl` is a Perl script that requires Perl 5 or later. Before running, make sure the script is executable by cd-ing to `$PROJECT/tools/bin` and running:
 
    `chmod +x wrap_compile.pl`
 
