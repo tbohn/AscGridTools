@@ -123,10 +123,10 @@
   
  - `grid_stats` - computes spatial statistics of the input grid.  
   
-   Usage: grid_stats <in_grid> <data_type> <statistic> <window_width> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_stats <in_grid> <data_type> <grid_stat> <window_width> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
    - <data_type>       Data data_type ("int" or "float")  
-   - <statistic>       Statistic to compute ("mean", "var", "std", "min", "max", "sum")  
+   - <grid_stat>       Statistic to compute ("mean", "var", "std", "min", "max", "sum")  
    - <window_width>      Width of analysis window; this is the resolution at which statistics will be output; a value of 0 == window encompasses entire grid  
    - <coord_prec> Precision of coordinates, i.e. number of decimal places  
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
@@ -134,11 +134,11 @@
   
  - `grid_subsample` - subsamples the input grid to a finer resolution.  
   
-   Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <method> <length> <data_type_out> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <sub_method> <length> <data_type_out> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
    - <data_type>       Data data_type ("int" or "float")  
    - <cellsize_out> Output cell width, in input units  
-   - <method>     Sub-sampling method; "nn" = nearest neighbor; "mean" = moving average; "bilin" = bi-linear interpolation, "gauss" = gaussian smoothing.  
+   - <sub_method>     Sub-sampling method; "nn" = nearest neighbor; "mean" = moving average; "bilin" = bi-linear interpolation, "gauss" = gaussian smoothing.  
    - <length>     Characteristic length (in output pixels) of averaging method:  
    -                For method="nn" or "bilin", length is ignored (can be 0)  
    -                For method="mean", length=width of averaging window  
