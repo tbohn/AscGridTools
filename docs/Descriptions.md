@@ -47,7 +47,7 @@
   
  - `grid_latlon2utm` - reprojects a grid from geographic projection to Universal Transverse Mercator (UTM) projection.  
   
-   Usage: grid_latlon2utm <in_grid> <data_type> <zone> <resolution> <minx> <maxx> <miny> <maxy> <k_rad> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_latlon2utm <in_grid> <data_type> <zone> <resolution> <minx> <maxx> <miny> <maxy> < radius > <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
    - <data_type>       Data data_type ("int" or "float")  
    - <zone>       UTM longitudinal zone  
@@ -56,7 +56,7 @@
    - <maxx>       Eastern boundary of output grid (m)  
    - <miny>       Southern boundary of output grid (m)  
    - <maxy>       Northern boundary of output grid (m)  
-   - <k_rad>     Radius (i.e. sigma, or standard deviation) of gaussian kernel (pixels)  
+   - < radius >     Radius (i.e. sigma, or standard deviation) of gaussian kernel (pixels)  
    -              NOTE: the gaussian kernel will act as a low-pass filter on the data,  
    -              with cutoff wavelength equal to 2*PI*radius (pixels).  
    - <coord_prec> Precision of coordinates, i.e. number of decimal places  
