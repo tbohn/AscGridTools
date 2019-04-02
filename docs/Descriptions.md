@@ -123,11 +123,11 @@
   
  - `grid_stats` - computes spatial statistics of the input grid.  
   
-   Usage: grid_stats <in_grid> <data_type> <stat> <width> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_stats <in_grid> <data_type> <statistic> <window_width> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
    - <data_type>       Data data_type ("int" or "float")  
-   - <stat>       Statistic to compute ("mean", "var", "std", "min", "max", "sum")  
-   - <width>      Width of analysis window; this is the resolution at which statistics will be output; a value of 0 == window encompasses entire grid  
+   - <statistic>       Statistic to compute ("mean", "var", "std", "min", "max", "sum")  
+   - <window_width>      Width of analysis window; this is the resolution at which statistics will be output; a value of 0 == window encompasses entire grid  
    - <coord_prec> Precision of coordinates, i.e. number of decimal places  
    - <data_prec>  Precision of data, i.e. number of decimal places (ignored for "int" data)  
    - <out_grid>   Output grid file prefix; ".mean.asc", ".std.asc", etc. will be appended to this prefix to build the various output filenames  
