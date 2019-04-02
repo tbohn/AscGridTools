@@ -134,17 +134,17 @@
   
  - `grid_subsample` - subsamples the input grid to a finer resolution.  
   
-   Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <sub_method> <length> <data_type_out> <coord_prec> <data_prec> <out_grid>  
+   Usage: grid_subsample <in_grid> <data_type> <cellsize_out> <sub_method> <radius> <data_type_out> <coord_prec> <data_prec> <out_grid>  
    - <in_grid>    Input grid file name  
    - <data_type>       Data data_type ("int" or "float")  
    - <cellsize_out> Output cell width, in input units  
    - <sub_method>     Sub-sampling method; "nn" = nearest neighbor; "mean" = moving average; "bilin" = bi-linear interpolation, "gauss" = gaussian smoothing.  
-   - <length>     Characteristic length (in output pixels) of averaging method:  
-   -                For method="nn" or "bilin", length is ignored (can be 0)  
-   -                For method="mean", length=width of averaging window  
-   -                For method="gauss", length=low-pass filter cut-off wavelength;  
+   - <radius>     Characteristic radius (in output pixels) of averaging method:  
+   -                For method="nn" or "bilin", radius is ignored (can be 0)  
+   -                For method="mean", radius=width of averaging window  
+   -                For method="gauss", radius=low-pass filter cut-off wavelength;  
    -                  in this case, sigma, the radius of the gaussian inflection point, is:  
-   -                    sigma = length/(2*PI)  
+   -                    sigma = radius/(2*PI)  
    -                  and the smoothing window width will be set to:  
    -                    2*((int)(3*sigma))+1  
    -                  so that the window contains 3*sigma on each side of the central pixel  
