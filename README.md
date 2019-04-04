@@ -1,7 +1,7 @@
 # AscGridTools
 Tools for processing ascii-format ESRI grid files.
 
-The tools in the project are programs written in C and Perl. To use these tools, you must have the Gnu gcc compiler and Perl 5 or later installed on your system.
+The tools in the project are programs written in C and Perl. To use these tools, you must have the GNU gcc compiler and Perl 5 or later installed on your system.
 
 ## Contents:
 1. tools/
